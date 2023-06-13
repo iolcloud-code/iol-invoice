@@ -51,4 +51,3 @@ reportlab==3.5.50
 six==1.15.0
 xhtml2pdf==0.2.4
 python-dotenv
-gunicorn==19.1.0
