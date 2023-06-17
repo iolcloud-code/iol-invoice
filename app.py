@@ -15,7 +15,7 @@ import dropbox
 from xhtml2pdf import pisa
 import datetime
 from flask_debugtoolbar import DebugToolbarExtension
-import smtplib, ssl
+import email, smtplib, ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
