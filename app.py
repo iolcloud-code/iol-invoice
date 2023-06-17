@@ -15,7 +15,7 @@ import dropbox
 from xhtml2pdf import pisa
 import datetime
 from flask_debugtoolbar import DebugToolbarExtension
-import smtplib
+import smtplib, ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
@@ -409,8 +409,11 @@ def send_html():
     connection.send_message(message)
     connection.quit()"""
 
+    # Create a secure SSL context
+    context = ssl.create_default_context()
+
     server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
+    server.starttls(context=context)
     server.login(email_username, password)
     text = message.as_string()
     server.sendmail(sender_email, receiver_email, text)
