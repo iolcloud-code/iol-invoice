@@ -390,7 +390,7 @@ def send_html():
     # open the file in bynary
     binary_pdf = open(filename_app, 'rb')
 
-    payload = MIMEBase('application', 'octet-stream')
+    payload = MIMEBase('application', 'octet-stream', Name=filename_app)
     # payload = MIMEBase('application', 'pdf', Name=pdfname)
     payload.set_payload((binary_pdf).read())
 
@@ -400,7 +400,7 @@ def send_html():
     # add header with pdf name
     payload.add_header('Content-Disposition', "attachment; filename= %s" % filename_app)
     message.attach(payload)
-    text = message.as_string()
+    
 
     #use gmail with port
     """connection = smtplib.SMTP(host='smtp.office365.com', port=587)
@@ -412,6 +412,7 @@ def send_html():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login(email_username, password)
+    text = message.as_string()
     server.sendmail(sender_email, receiver_email, text)
     server.quit()
     
