@@ -427,7 +427,7 @@ def send_html():
             server.sendmail(sender_email, receiver_email, text)
             server.quit()
     except Exception as e:
-        print e.message, e.args
+        print(e.message, e.args)
     
     return render_template('email_sent.html', user=current_user)    
 
