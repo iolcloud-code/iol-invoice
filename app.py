@@ -343,6 +343,7 @@ def send_html():
     user_hashed=current_user.user_id_hash
     name=user_hashed
     name=name.replace("/","$$$")
+    name=name.replace(".","$$$")
     
     access_token = app.config['DROPBOX_ACCESS_TOKEN']
 
@@ -374,6 +375,7 @@ def send_html():
     
     name=user_hashed
     name=name.replace("/","$$$")
+    name=name.replace(".","$$$")
     
     access_token = app.config['DROPBOX_ACCESS_TOKEN']
 
