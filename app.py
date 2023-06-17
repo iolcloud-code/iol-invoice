@@ -15,7 +15,7 @@ import dropbox
 from xhtml2pdf import pisa
 import datetime
 from flask_debugtoolbar import DebugToolbarExtension
-import email, ssl, smtplib
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
@@ -390,7 +390,7 @@ def send_html():
     # open the file in bynary
     binary_pdf = open(filename_app, 'rb')
 
-    payload = MIMEBase('application', 'octate-stream', Name=filename_app)
+    payload = MIMEBase('application', 'octet-stream', Name=filename_app)
     # payload = MIMEBase('application', 'pdf', Name=pdfname)
     payload.set_payload((binary_pdf).read())
 
