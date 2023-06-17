@@ -390,7 +390,7 @@ def send_html():
     # open the file in bynary
     binary_pdf = open(filename_app, 'rb')
 
-    payload = MIMEBase('application', 'octet-stream', Name=filename_app)
+    payload = MIMEBase('application', 'octet-stream')
     # payload = MIMEBase('application', 'pdf', Name=pdfname)
     payload.set_payload((binary_pdf).read())
 
@@ -412,12 +412,16 @@ def send_html():
     # Create a secure SSL context
     context = ssl.create_default_context()
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls(context=context)
-    server.login(email_username, password)
+    #server = smtplib.SMTP('smtp.gmail.com', 587)
+    #server.starttls(context=context)
+    #server.login(email_username, password)
     text = message.as_string()
-    server.sendmail(sender_email, receiver_email, text)
-    server.quit()
+    #server.sendmail(sender_email, receiver_email, text)
+    #server.quit()
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+        server.login(email_username, password)
+        server.sendmail(sender_email, receiver_email, text)
     
     return render_template('email_sent.html', user=current_user)    
 
