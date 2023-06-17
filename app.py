@@ -2106,7 +2106,7 @@ def invoicenumber():
             
             name=user_hashed
             name=name.replace("/","$$$")
-	    name=name.replace(".","$$$") 
+            name=name.replace(".","$$$") 
             #write html and pdf code
             print(app.config['UPLOAD_FOLDER'])
             
@@ -2519,7 +2519,7 @@ def invoicenumber():
             from_template(TEMPLATE_FILE, OUTPUT_FILENAME)
             
             name=user_hashed
-            name=name.replace("/","$$$") 
+            name=name.replace("/","$$$")
             name=name.replace(".","$$$")
             #INPUT_FILENAME = app.config['UPLOAD_FOLDER'] + "/" + name + ".pdf"
             #OUTPUT_TEMPLATE = '/iolcloud/' + name + ".pdf"
@@ -2826,7 +2826,7 @@ def invoicenumberbyein():
             query = db.session.query(InvoiceItems).filter_by(user_id=(user_hashed), invoice_number=(request.form['invoice_number'])).paginate(page=page, per_page=POST_PER_PAGE)
             
             name=user_hashed
-            name=name.replace("/","$$$") 
+            name=name.replace("/","$$$")
             name=name.replace(".","$$$")
             #write html and pdf code
             print(app.config['UPLOAD_FOLDER'])
@@ -3240,7 +3240,7 @@ def invoicenumberbyein():
             from_template(TEMPLATE_FILE, OUTPUT_FILENAME)
             
             name=user_hashed
-            name=name.replace("/","$$$") 
+            name=name.replace("/","$$$")
             name=name.replace(".","$$$")
             #INPUT_FILENAME = app.config['UPLOAD_FOLDER'] + "/" + name + ".pdf"
             #OUTPUT_TEMPLATE = '/iolcloud/' + name + ".pdf"
@@ -3395,7 +3395,7 @@ def invoicenumberresults():
             query = db.session.query(InvoiceItems).filter_by(user_id=(user_hashed), invoice_number=(request.form['invoice_number'])).paginate(page=page, per_page=POST_PER_PAGE)
             
             name=user_hashed
-            name=name.replace("/","$$$") 
+            name=name.replace("/","$$$")
             name=name.replace(".","$$$")
             #write html and pdf code
             print(app.config['UPLOAD_FOLDER'])
@@ -3809,7 +3809,7 @@ def invoicenumberresults():
             from_template(TEMPLATE_FILE, OUTPUT_FILENAME)
             
             name=user_hashed
-            name=name.replace("/","$$$") 
+            name=name.replace("/","$$$")
             name=name.replace(".","$$$")
             #INPUT_FILENAME = app.config['UPLOAD_FOLDER'] + "/" + name + ".pdf"
             #OUTPUT_TEMPLATE = '/iolcloud/' + name + ".pdf"
@@ -3964,7 +3964,7 @@ def invoicenumberbydate():
             query = db.session.query(InvoiceItems).filter_by(user_id=(user_hashed), invoice_number=(request.form['invoice_number'])).paginate(page=page, per_page=POST_PER_PAGE)
             
             name=user_hashed
-            name=name.replace("/","$$$") 
+            name=name.replace("/","$$$")
             name=name.replace(".","$$$")
             #write html and pdf code
             print(app.config['UPLOAD_FOLDER'])
@@ -4378,7 +4378,7 @@ def invoicenumberbydate():
             from_template(TEMPLATE_FILE, OUTPUT_FILENAME)
             
             name=user_hashed
-            name=name.replace("/","$$$") 
+            name=name.replace("/","$$$")
             name=name.replace(".","$$$")
             #INPUT_FILENAME = app.config['UPLOAD_FOLDER'] + "/" + name + ".pdf"
             #OUTPUT_TEMPLATE = '/iolcloud/' + name + ".pdf"
