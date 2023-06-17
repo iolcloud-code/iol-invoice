@@ -421,10 +421,13 @@ def send_html():
     #server.sendmail(sender_email, receiver_email, text)
     #server.quit()
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-        server.login(email_username, password)
-        server.sendmail(sender_email, receiver_email, text)
-    
+    try:
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+            server.login(email_username, password)
+            server.sendmail(sender_email, receiver_email, text)
+    except EmailError:
+        print("Error sending email")
+
     return render_template('email_sent.html', user=current_user)    
 
 
