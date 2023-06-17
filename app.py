@@ -398,7 +398,7 @@ def send_html():
     encoders.encode_base64(payload)
 
     # add header with pdf name
-    payload.add_header('Content-Decomposition', 'attachment', filename=filename_app)
+    payload.add_header('Content-Disposition', 'attachment'; filename= %s" % filename_app)
     message.attach(payload)
     #text = message.as_string()
 
