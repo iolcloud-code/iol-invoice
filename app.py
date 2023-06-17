@@ -429,7 +429,8 @@ def send_html():
     except Exception as e:
         print(e.message, e.args)
     
-    return render_template('email_sent.html', user=current_user)    
+    #return render_template('email_sent.html', user=current_user)
+    return 'Done'    
 
 
 
