@@ -426,11 +426,10 @@ def send_html():
             server.login(email_username, password)
             server.sendmail(sender_email, receiver_email, text)
             server.quit()
-            return render_template('email_sent.html', user=current_user)
     except Exception as e:
         print(e.message, e.args)
-    #else:    
-        #return render_template('email_sent.html', user=current_user)
+    else:    
+        return render_template('email_sent.html', user=current_user)
         #return 'Done' + ' ' + e.message + ' ' + e.args
 
 
